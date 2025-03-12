@@ -1,0 +1,12 @@
+2025/03/12-17:31:54.164 d4c3 Reusing MANIFEST /home/haida/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
+2025/03/12-17:31:54.164 d4c3 Recovering log #10
+2025/03/12-17:31:54.178 d4c3 Reusing old log /home/haida/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000010.log 
+2025/03/12-18:23:39.393 d4c3 Level-0 table #15: started
+2025/03/12-18:23:39.432 d4c3 Level-0 table #15: 1454851 bytes OK
+2025/03/12-18:23:39.435 d4c3 Delete type=0 #10
+2025/03/12-18:31:54.557 d4c3 Compacting 1@1 + 1@2 files
+2025/03/12-18:31:54.576 d4c3 Generated table #16@1: 1823 keys, 368763 bytes
+2025/03/12-18:31:54.576 d4c3 Compacted 1@1 + 1@2 files => 368763 bytes
+2025/03/12-18:31:54.578 d4c3 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/03/12-18:31:54.578 d4c3 Delete type=2 #12
+2025/03/12-18:31:54.578 d4c3 Delete type=2 #15

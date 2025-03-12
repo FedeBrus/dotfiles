@@ -1,0 +1,15 @@
+[General]
+Version=202
+ViewPropsTimestamp=2025,3,8,17,34,57.318
+TerminalApplication=alacritty
+TerminalService=Alacritty.desktop
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=appimagethumbnail,fontthumbnail,windowsimagethumbnail,kraorathumbnail,opendocumentthumbnail,svgthumbnail,exrthumbnail,directorythumbnail,comicbookthumbnail,cursorthumbnail,ebookthumbnail,imagethumbnail,windowsexethumbnail,jpegthumbnail,audiothumbnail,djvuthumbnail,avif,gdk-pixbuf-thumbnailer,jxl

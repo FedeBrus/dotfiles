@@ -1,0 +1,21 @@
+body {
+	--workspace-background-translucent: rgba(var(--mono-rgb-0), 0.25);
+	--background-primary: #1e1e1e;
+	--tab-background-active: transparent;
+	--titlebar-background: transparent;
+	--tab-outline-color: transparent;
+	--text-normal: #f1f1f1;
+	--tab-font-size: 0.85em;
+  }
+  
+  .workspace-tab-header.mod-active.is-active,
+  .workspace-split.mod-root,
+  .workspace-split.mod-root .view-content,
+  .workspace-split.mod-root .view-header,
+  .workspace-tab-container,
+  .view-header-title-container:not(.mod-at-end):after,
+  .custom-frames-frame,
+  .is-focused .workspace-leaf.mod-active .view-header {
+	background: transparent !important;
+	color: #fff;
+  }

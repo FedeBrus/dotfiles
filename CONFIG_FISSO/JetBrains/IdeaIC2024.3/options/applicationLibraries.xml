@@ -1,0 +1,23 @@
+<application>
+  <component name="libraryTable">
+    <library name="javafx-sdk-21">
+      <CLASSES>
+        <root url="file:///lib/javafx-sdk-21.0.6/lib" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="file:///lib/javafx-sdk-21.0.6/legal/javafx.base" />
+        <root url="file:///lib/javafx-sdk-21.0.6/legal/javafx.controls" />
+        <root url="file:///lib/javafx-sdk-21.0.6/legal/javafx.fxml" />
+        <root url="file:///lib/javafx-sdk-21.0.6/legal/javafx.graphics" />
+        <root url="file:///lib/javafx-sdk-21.0.6/legal/javafx.media" />
+        <root url="file:///lib/javafx-sdk-21.0.6/legal/javafx.swing" />
+        <root url="file:///lib/javafx-sdk-21.0.6/legal/javafx.web" />
+      </JAVADOC>
+      <NATIVE>
+        <root url="file:///lib/javafx-sdk-21.0.6/lib" />
+      </NATIVE>
+      <SOURCES />
+      <jarDirectory url="file:///lib/javafx-sdk-21.0.6/lib" recursive="false" />
+    </library>
+  </component>
+</application>

@@ -1,0 +1,86 @@
+2025-03-11 18:16:51.839 [info] [main] Log level: Info
+2025-03-11 18:16:51.839 [info] [main] Validating found git in: "git"
+2025-03-11 18:16:51.839 [info] [main] Using git "2.48.1" from "git"
+2025-03-11 18:16:51.839 [info] [Model][doInitialScan] Initial repository scan started
+2025-03-11 18:16:51.839 [info] > git rev-parse --show-toplevel [5ms]
+2025-03-11 18:16:51.839 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2025-03-11 18:16:51.839 [info] [Model][openRepository] Opened repository: /home/haida/Code/HQEditor
+2025-03-11 18:16:51.849 [info] > git rev-parse --show-toplevel [2ms]
+2025-03-11 18:16:51.849 [info] > git config --get commit.template [6ms]
+2025-03-11 18:16:51.879 [info] > git rev-parse --show-toplevel [25ms]
+2025-03-11 18:16:51.894 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [19ms]
+2025-03-11 18:16:51.899 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/haida/Code/HQEditor/.git/refs/remotes/origin/main'
+2025-03-11 18:16:51.899 [info] > git rev-parse --show-toplevel [6ms]
+2025-03-11 18:16:51.900 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-03-11 18:16:51.900 [info] > git rev-parse refs/remotes/origin/main [1ms]
+2025-03-11 18:16:51.915 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [6ms]
+2025-03-11 18:16:52.038 [info] > git status -z -uall [133ms]
+2025-03-11 18:16:52.059 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [5ms]
+2025-03-11 18:16:52.065 [info] > git config --get --local branch.main.vscode-merge-base [1ms]
+2025-03-11 18:16:52.065 [warning] [Git][config] git config failed: Failed to execute git
+2025-03-11 18:16:52.068 [info] > git config --get commit.template [9ms]
+2025-03-11 18:16:52.093 [info] > git reflog main --grep-reflog=branch: Created from *. [25ms]
+2025-03-11 18:16:52.098 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [2ms]
+2025-03-11 18:16:52.102 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [9ms]
+2025-03-11 18:16:52.106 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/haida/Code/HQEditor/.git/refs/remotes/origin/main'
+2025-03-11 18:16:52.106 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [5ms]
+2025-03-11 18:16:52.110 [info] > git rev-parse refs/remotes/origin/main [4ms]
+2025-03-11 18:16:52.118 [info] > git config --add --local branch.main.vscode-merge-base origin/main [8ms]
+2025-03-11 18:16:52.118 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [1ms] (cancelled)
+2025-03-11 18:16:52.128 [info] > git status -z -uall [14ms] (cancelled)
+2025-03-11 18:16:52.128 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [6ms]
+2025-03-11 18:16:52.133 [info] > git config --get commit.template [6ms]
+2025-03-11 18:16:52.133 [info] > git config --get --local branch.main.vscode-merge-base [1ms]
+2025-03-11 18:16:52.141 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [4ms]
+2025-03-11 18:16:52.145 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [5ms]
+2025-03-11 18:16:52.149 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/haida/Code/HQEditor/.git/refs/remotes/origin/main'
+2025-03-11 18:16:52.149 [info] > git merge-base refs/heads/main refs/remotes/origin/main [4ms]
+2025-03-11 18:16:52.153 [info] > git rev-parse refs/remotes/origin/main [4ms]
+2025-03-11 18:16:52.160 [info] > git diff --name-status -z --diff-filter=ADMR 2912ed302985d52109268b3f149a53dadfcda065...refs/remotes/origin/main [7ms]
+2025-03-11 18:16:52.161 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [1ms]
+2025-03-11 18:16:52.290 [info] > git status -z -uall [134ms]
+2025-03-11 18:16:52.363 [info] > git check-ignore -v -z --stdin [2ms]
+2025-03-11 18:16:54.094 [info] > git show --textconv :index copy.html [5ms]
+2025-03-11 18:16:54.095 [info] > git ls-files --stage -- index copy.html [2ms]
+2025-03-11 18:16:54.101 [info] > git cat-file -s 3cb34fe91e57c5b6b1cc663340877c313eb20ba0 [2ms]
+2025-03-11 18:16:55.041 [info] > git check-ignore -v -z --stdin [8ms]
+2025-03-11 18:19:20.290 [info] > git show --textconv :Prova/levelData.js [1ms]
+2025-03-11 18:19:20.302 [info] > git ls-files --stage -- Prova/levelData.js [2ms]
+2025-03-11 18:19:20.320 [info] > git cat-file -s 03dc5daa91434201de6fcf256e4758f78d1e06dd [8ms]
+2025-03-11 18:20:20.513 [info] > git show --textconv :Prova/pan.js [19ms]
+2025-03-11 18:20:20.516 [info] > git ls-files --stage -- Prova/pan.js [5ms]
+2025-03-11 18:20:20.536 [info] > git cat-file -s a52064f9eb2eabd010571711d0c1ec6577e039ca [5ms]
+2025-03-11 18:21:01.041 [info] > git show --textconv :Prova/element.js [5ms]
+2025-03-11 18:21:01.041 [info] > git ls-files --stage -- Prova/element.js [1ms]
+2025-03-11 18:21:01.046 [info] > git cat-file -s 3ecf9988da37892529c0aa092128748c182ba0be [1ms]
+2025-03-11 18:21:13.563 [info] > git blame --root --incremental 2912ed302985d52109268b3f149a53dadfcda065 -- Prova/element.js [2ms]
+2025-03-11 18:24:10.030 [info] > git config --get commit.template [7ms]
+2025-03-11 18:24:10.031 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2025-03-11 18:24:10.037 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/haida/Code/HQEditor/.git/refs/remotes/origin/main'
+2025-03-11 18:24:10.038 [info] > git rev-parse refs/remotes/origin/main [2ms]
+2025-03-11 18:24:10.047 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [1ms]
+2025-03-11 18:24:10.175 [info] > git status -z -uall [134ms]
+2025-03-11 18:24:20.763 [info] > git config --get commit.template [6ms]
+2025-03-11 18:24:20.763 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2025-03-11 18:24:20.768 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/haida/Code/HQEditor/.git/refs/remotes/origin/main'
+2025-03-11 18:24:20.769 [info] > git rev-parse refs/remotes/origin/main [1ms]
+2025-03-11 18:24:20.779 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [2ms]
+2025-03-11 18:24:20.907 [info] > git status -z -uall [134ms]
+2025-03-11 18:25:17.229 [info] > git config --get commit.template [8ms]
+2025-03-11 18:25:17.230 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2025-03-11 18:25:17.236 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/haida/Code/HQEditor/.git/refs/remotes/origin/main'
+2025-03-11 18:25:17.237 [info] > git rev-parse refs/remotes/origin/main [2ms]
+2025-03-11 18:25:17.248 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [1ms]
+2025-03-11 18:25:17.375 [info] > git status -z -uall [134ms]
+2025-03-11 18:25:23.661 [info] > git config --get commit.template [8ms]
+2025-03-11 18:25:23.662 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2025-03-11 18:25:23.667 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/haida/Code/HQEditor/.git/refs/remotes/origin/main'
+2025-03-11 18:25:23.668 [info] > git rev-parse refs/remotes/origin/main [1ms]
+2025-03-11 18:25:23.679 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [1ms]
+2025-03-11 18:25:23.807 [info] > git status -z -uall [134ms]
+2025-03-11 18:25:28.820 [info] > git config --get commit.template [6ms]
+2025-03-11 18:25:28.821 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2025-03-11 18:25:28.827 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/haida/Code/HQEditor/.git/refs/remotes/origin/main'
+2025-03-11 18:25:28.828 [info] > git rev-parse refs/remotes/origin/main [1ms]
+2025-03-11 18:25:28.841 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [2ms]
+2025-03-11 18:25:28.975 [info] > git status -z -uall [142ms]

@@ -1,0 +1,69 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "268ce33f8c3c018192b9344bc1fe4b8a6916eca7a67cbea628ed5014897c17aa",
+    "telemetry.devDeviceId": "839a4304-4f15-48e5-9bce-a9161ba290a2",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///usr/share/rofi/themes"
+            },
+            {
+                "folderUri": "file:///home/haida/Code/HQEditor"
+            }
+        ],
+        "emptyWindows": []
+    },
+    "windowControlHeight": 35,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/haida/.config/rofi": "__default__profile__",
+            "file:///usr/share/rofi/themes": "__default__profile__",
+            "file:///home/haida/Code/HQEditor": "__default__profile__"
+        },
+        "emptyWindows": {}
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/haida/Code/HQEditor",
+            "backupPath": "/home/haida/.config/Code - OSS/Backups/e1a861c097ddd2299a9b5adf56c3a283",
+            "uiState": {
+                "mode": 0,
+                "x": 20,
+                "y": 48,
+                "width": 1880,
+                "height": 984
+            }
+        },
+        "openedWindows": []
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#1d2021",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#ebdbb2",
+            "background": "#1d2021",
+            "editorBackground": "#1d2021",
+            "titleBarBackground": "#1d2021",
+            "activityBarBackground": "#1d2021",
+            "activityBarBorder": "#3c3836",
+            "sideBarBackground": "#1d2021",
+            "sideBarBorder": "#3c3836",
+            "statusBarBackground": "#1d2021",
+            "statusBarBorder": "#3c3836",
+            "statusBarNoFolderBackground": "#1d2021"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 170,
+            "auxiliarySideBarWidth": 0,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    }
+}

@@ -1,0 +1,43 @@
+/* Make the main UI transparent */
+.workspace, 
+.workspace-split, 
+.workspace-leaf, 
+.workspace-leaf-content {
+    background: transparent !important;
+}
+
+/* Make the notes area transparent */
+.workspace-leaf-content .view-content {
+    background: transparent !important;
+}
+
+/* Make the sidebars transparent */
+.workspace-ribbon,
+.workspace-tabs {
+    background: transparent !important;
+}
+
+/* Optional: Make the status bar transparent */
+.status-bar {
+    background: transparent !important;
+}
+
+/* Optional: Make the command palette transparent */
+.suggestion-container {
+    background: transparent !important;
+}
+
+/* Add a blurred wallpaper background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://source.unsplash.com/random") no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.1; /* Adjust transparency */
+    filter: blur(10px); /* Add a blur effect */
+    z-index: -1;
+}

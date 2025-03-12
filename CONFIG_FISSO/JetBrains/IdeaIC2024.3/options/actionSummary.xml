@@ -1,0 +1,115 @@
+<application>
+  <component name="ActionsLocalSummary">
+    <e n="$Copy">
+      <i c="1" l="1741815754800" />
+    </e>
+    <e n="$Delete">
+      <i c="2" l="1741816135565" />
+    </e>
+    <e n="$SelectAll">
+      <i c="6" l="1741816231126" />
+    </e>
+    <e n="CloseProject">
+      <i c="7" l="1741816005847" />
+    </e>
+    <e n="EditorBackSpace">
+      <i c="4" l="1741816251039" />
+    </e>
+    <e n="EditorCopy">
+      <i c="4" l="1741816256088" />
+    </e>
+    <e n="EditorEnter">
+      <i c="13" l="1741816252711" />
+    </e>
+    <e n="EditorPaste">
+      <i c="4" l="1741816231763" />
+    </e>
+    <e n="Floating.CodeToolbar.Surround">
+      <i c="1" l="1741816206168" />
+    </e>
+    <e n="GotoFile">
+      <i c="1" l="1741815679039" />
+    </e>
+    <e n="MoreRunToolbarActions">
+      <i c="1" l="1741815297352" />
+    </e>
+    <e n="NewClass">
+      <i c="2" l="1741816165054" />
+    </e>
+    <e n="NewDir">
+      <i c="3" l="1741816117874" />
+    </e>
+    <e n="NewProject">
+      <i c="3" l="1741816092564" />
+    </e>
+    <e n="RedesignedRunConfigurationSelector">
+      <i c="1" l="1741815294224" />
+    </e>
+    <e n="Run">
+      <i c="5" l="1741816241461" />
+    </e>
+    <e n="SaveAll">
+      <i c="17" l="1741816238993" />
+    </e>
+    <e n="SaveFileAsTemplate">
+      <i c="3" l="1741814184159" />
+    </e>
+    <e n="SaveProjectAsTemplate">
+      <i c="1" l="1741814228398" />
+    </e>
+    <e n="ShowProjectStructureSettings">
+      <i c="5" l="1741814054099" />
+    </e>
+    <e n="ShowSettings">
+      <i c="4" l="1741815270176" />
+    </e>
+    <e n="WelcomeScreen.CreateNewProject">
+      <i c="5" l="1741815703438" />
+    </e>
+    <e n="WelcomeScreen.OpenProject">
+      <i c="4" l="1741816015441" />
+    </e>
+    <e n="WelcomeScreen.RemoveSelected">
+      <i c="3" l="1741816012842" />
+    </e>
+    <e n="WelcomeScreen.Settings">
+      <i c="3" l="1741815532984" />
+    </e>
+    <e n="com.intellij.ide.actions.EditFileTemplatesAction">
+      <i c="1" l="1741814267431" />
+    </e>
+    <e n="com.intellij.ide.fileTemplates.impl.AllFileTemplatesConfigurable$5">
+      <i c="2" l="1741814278154" />
+    </e>
+    <e n="com.intellij.notification.NotificationAction$Simple">
+      <i c="2" l="1741814007690" />
+    </e>
+    <e n="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
+      <i c="1" l="1741815680287" />
+    </e>
+    <e n="com.intellij.openapi.roots.ui.configuration.libraryEditor.CreateNewLibraryAction">
+      <i c="1" l="1741812838677" />
+    </e>
+    <e n="com.intellij.openapi.roots.ui.configuration.projectRoot.BaseStructureConfigurable$MyRemoveAction">
+      <i c="1" l="1741814038094" />
+    </e>
+    <e n="com.intellij.openapi.ui.MasterDetailsComponent$MyActionGroupWrapper">
+      <i c="1" l="1741812837059" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.SquareAnActionButton">
+      <i c="2" l="1741813779775" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.customFrameDecorations.header.toolbar.MainMenuButton$ShowMenuAction">
+      <i c="28" l="1741816090203" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.welcomeScreen.WelcomeScreenComponentFactory$4">
+      <i c="5" l="1741815532345" />
+    </e>
+    <e n="com.intellij.toolWindow.ShowMoreToolWindowsAction">
+      <i c="3" l="1741814237623" />
+    </e>
+    <e n="com.intellij.ui.CommonActionsPanel$AddButton">
+      <i c="2" l="1741812876970" />
+    </e>
+  </component>
+</application>

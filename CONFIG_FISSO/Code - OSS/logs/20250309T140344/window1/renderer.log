@@ -1,0 +1,13 @@
+2025-03-09 14:03:45.975 [info] Started local extension host with pid 354317.
+2025-03-09 14:03:46.017 [info] Started initializing default profile extensions in extensions installation folder. file:///home/haida/.vscode-oss/extensions
+2025-03-09 14:03:46.178 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/haida/.vscode-oss/extensions
+2025-03-09 14:03:49.029 [info] [perf] Render performance baseline is 41ms
+2025-03-09 14:04:36.243 [info] Started local extension host with pid 354542.
+2025-03-09 14:04:38.874 [info] [perf] Render performance baseline is 22ms
+2025-03-09 14:53:29.970 [info] Started local extension host with pid 367695.
+2025-03-09 14:53:32.691 [info] [perf] Render performance baseline is 31ms
+2025-03-09 14:53:48.163 [error] [text file model] handleSaveError(1) - exit - resulted in a save error: Error: Unable to write file '/usr/share/rofi/themes/gruvbox-dark.rasi' (NoPermissions (FileSystemError): Error: EACCES: permission denied, open '/usr/share/rofi/themes/gruvbox-dark.rasi') file:///usr/share/rofi/themes/gruvbox-dark.rasi
+2025-03-09 14:53:48.929 [error] [text file model] handleSaveError(1) - exit - resulted in a save error: Error: Unable to write file '/usr/share/rofi/themes/gruvbox-dark.rasi' (NoPermissions (FileSystemError): Error: EACCES: permission denied, open '/usr/share/rofi/themes/gruvbox-dark.rasi') file:///usr/share/rofi/themes/gruvbox-dark.rasi
+2025-03-09 14:53:50.999 [error] [text file model] handleSaveError(1) - exit - resulted in a save error: Error: No polkit authentication agent found. file:///usr/share/rofi/themes/gruvbox-dark.rasi
+2025-03-09 14:53:53.376 [error] [text file model] handleSaveError(1) - exit - resulted in a save error: Error: No polkit authentication agent found. file:///usr/share/rofi/themes/gruvbox-dark.rasi
+2025-03-09 14:53:59.771 [error] [text file model] handleSaveError(1) - exit - resulted in a save error: Error: Unable to write file '/usr/share/rofi/themes/gruvbox-dark.rasi' (NoPermissions (FileSystemError): Error: EACCES: permission denied, open '/usr/share/rofi/themes/gruvbox-dark.rasi') file:///usr/share/rofi/themes/gruvbox-dark.rasi

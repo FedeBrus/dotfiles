@@ -1,0 +1,6 @@
+<application>
+  <component name="PathMacrosImpl">
+    <macro name="MAVEN_REPOSITORY" value="/home/haida/.m2/repository" />
+    <macro name="JAVAFX_PATH" value="/usr/lib/javafx-sdk-21.0.6/lib" />
+  </component>
+</application>

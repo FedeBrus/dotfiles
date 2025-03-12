@@ -1,0 +1,33 @@
+configuration {
+ 	modes: "window,drun";
+	font: "IosevkaNerdFont 12";
+ 	show-icons: true;
+	icon-theme: "Papirus";
+    drun-match-fields: "System";
+    drun-categoires: "System";
+    drun-display-format: "{categories}";
+
+    timeout {
+        action: "kb-cancel";
+        delay:  0;
+    }
+
+    filebrowser {
+        directories-first: true;
+        sorting-method: "name";
+    }
+
+    drun {
+        display-name: " ";
+    }
+
+    run {
+        display-name: " ";
+    }
+
+    window {
+        display-name: " ";
+    }
+}
+
+@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
