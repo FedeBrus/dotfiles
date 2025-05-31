@@ -1,0 +1,78 @@
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+* {
+    font-family: NotoSans Armenian, Iosevka Nerd Font, sans-serif;
+    font-size: 16px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #ebdbb2;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+#workspaces,
+#hardware,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#clock,
+#language,
+#network,
+#taskbar,
+#pulseaudio,
+#tray,
+#mpd {
+    margin: 5px 5px 0px 5px;
+    padding: 2px 14px;
+    background-color: #282828;
+    color: #ebdbb2;
+}
+
+#workspaces {
+    padding: 2px 2px;
+}
+
+#workspaces button {
+    all: initial;
+    padding: 6px 12px;
+    color: #ebdbb2;
+    margin: 2px;
+}
+
+#workspaces button:hover {
+    box-shadow: inset -2px -2px #ebdbb2, inset 2px 2px #ebdbb2;
+    background-color: #282828;
+    color: #ebdbb2;
+}
+
+#workspaces button:not(.active):not(.focused):not(.empty) {
+    box-shadow: inset 0 -2px #ebdbb2;
+}
+
+#workspaces button:not(.active):not(.focused):not(.empty):hover {
+    box-shadow: inset -2px -2px #ebdbb2, inset 2px 2px #ebdbb2;
+}
+
+#workspaces button.active {
+    background-color: #ebdbb2;
+    color: #282828;
+    padding: 0px 20px;
+}
+
+#hardware * {
+    padding: 5 5px;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ebdbb2;
+        color: #282828;
+    }
+}
+
+tooltip {
+    background-color: #282828;
+    border-radius: 0;
+}

@@ -1,0 +1,245 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "bottom", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 38, // Waybar height (to be removed for auto height)
+    "spacing": 4, // Gaps between modules (4px)
+    "reload_style_on_change": true,
+    "modules-left": [
+        "cpu",
+        "memory",
+        "disk",
+        "temperature",
+        "clock",
+        "hyprland/language",
+        "mpd",
+        "network",
+        // "grayscale",
+        // "powermenu",
+        // "quote",
+        //  "brownnoise"
+        "pulseaudio"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "tray",
+        "wlr/taskbar",
+    ],
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "cpu": {
+        "format": "{usage}%  ",
+        "tooltip": false,
+        "on-click": "kitty -e btop"
+    },
+
+    "memory": {
+        "format": "{percentage}%  ",
+        "on-click": "kitty -e btop"
+    },
+
+    "disk": {
+        "format": "{percentage_used}% 󰉉 ",
+        "on-click": "kitty -e gdu $HOME --config-file $HOME/.config/gdu/gdu.yaml"
+    },
+
+    "temperature": {
+        "thermal-zone": 2,
+        "critical-threshold": 70,
+        "format-critical": "{temperatureC}°C {icon} ",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "wlr/taskbar": {
+          "format": "{icon} {title:.17}",
+          "icon-size": 28,
+          "spacing": 3,
+          "on-click-middle": "close",
+          "tooltip-format": "{title}",
+          "ignore-list": [],
+          "on-click": "activate"
+    },    
+
+    "clock": {
+    "format": "{:%H:%M}  ",
+    "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+                "mode"          : "year",
+                "mode-mon-col"  : 3,
+                "weeks-pos"     : "right",
+                "on-scroll"     : 1,
+                "format": {
+                          "months":     "<span color='#ebdbb2'><b>{}</b></span>",
+                          "days":       "<span color='#ebdbb2'><b>{}</b></span>",
+                          "weeks":      "<span color='#ebdbb2'><b>W{}</b></span>",
+                          "weekdays":   "<span color='#ebdbb2'><b>{}</b></span>",
+                          "today":      "<span color='#ebdbb2'><b><u>{}</u></b></span>"
+                          }
+                },
+                "actions":  {
+                            "on-click-right": "mode",
+                            "on-scroll-up": "tz_up",
+                            "on-scroll-down": "tz_down",
+                            "on-scroll-up": "shift_up",
+                            "on-scroll-down": "shift_down"
+                            }
+    },
+
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": true,
+        },
+        "modules": [
+          "custom/hardware_logo",
+          "cpu",
+          "memory",
+          "disk",
+          "temperature"
+        ],
+    },
+
+    "custom/hardware_logo": {
+      "format": " ",
+    },
+
+    "hyprland/language": {
+        "format": "{}  ",
+        "format-en": "en",
+        "format-it": "it"
+    },
+
+    // Modules configuration
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "Հ",
+            "2": "Ծ",
+            "3": "Ֆ",
+            "4": "Ց",
+            "5": "Շ",
+            "6": "Յ",
+            "7": "Չ",
+            "8": "Ձ",
+            "9": "Ճ",
+            "10": "Ը",
+        },
+
+        "persistent-workspaces": {
+            "HDMI-A-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        }
+    },
+
+    "privacy": {
+      "icon-spacing": 4,
+      "icon-size": 18,
+      "transition-duration": 250,
+      "modules": [
+        {
+          "type": "screenshare",
+          "tooltip": true,
+          "tooltip-icon-size": 10
+        },
+        {
+          "type": "audio-out",
+          "tooltip": true,
+          "tooltip-icon-size": 24
+        },
+        {
+          "type": "audio-in",
+          "tooltip": true,
+          "tooltip-icon-size": 24
+        }
+      ]
+    },
+    
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/power": {
+        "format" : "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+          "shutdown": "shutdown",
+          "reboot": "reboot",
+          "suspend": "systemctl suspend",
+          "hibernate": "systemctl hibernate"
+        }
+    }
+}
+

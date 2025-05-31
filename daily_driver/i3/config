@@ -39,9 +39,13 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 
-exec_always --no-startup-id sh -c 'IMG=$(find /home/haida/Pictures/wallpapers/ -type f | shuf -n 1) && feh --bg-fill "$IMG" --bg-fill "$IMG" && convert "$IMG" -blur 0x8 /tmp/blurred.png'
-bindsym $mod+Shift+p exec sh -c 'IMG=$(find /home/haida/Pictures/wallpapers/ -type f | shuf -n 1) && feh --bg-fill "$IMG" --bg-fill "$IMG" && convert "$IMG" -blur 0x8 /tmp/blurred.png'
-bindsym $mod+Shift+i exec /home/haida/.config/i3/toggle-monitor-grayscale.sh && /home/haida/.config/i3/grayscale-wp.sh
+# exec_always --no-startup-id sh -c 'IMG=$(find /home/haida/Pictures/wallpapers/ -type f | shuf -n 1) && feh --bg-fill "$IMG" --bg-fill "$IMG" && convert "$IMG" -blur 0x8 /tmp/blurred.png'
+# bindsym $mod+Shift+p exec sh -c 'IMG=$(find /home/haida/Pictures/wallpapers/ -type f | shuf -n 1) && feh --bg-fill "$IMG" --bg-fill "$IMG" && convert "$IMG" -blur 0x8 /tmp/blurred.png'
+# bindsym $mod+Shift+i exec /home/haida/.config/i3/toggle-monitor-grayscale.sh && /home/haida/.config/i3/grayscale-wp.sh
+exec_always --no-startup-id /home/haida/.config/i3/pick-wp.sh && /home/haida/.config/i3/set-wp.sh
+bindsym $mod+Shift+p exec /home/haida/.config/i3/pick-wp.sh && /home/haida/.config/i3/set-wp.sh
+bindsym $mod+Shift+i exec /home/haida/.config/i3/toggle-monitor-grayscale.sh && /home/haida/.config/i3/set-wp.sh
+
 
 # Use pactl to adjust volume in PulseAudioy
 set $refresh_i3status killall -SIGUSR1 i3status
