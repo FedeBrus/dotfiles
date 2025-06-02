@@ -1,0 +1,74 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "bottom", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 28, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (4px)
+    "reload_style_on_change": true,
+    "modules-left": [
+        // "powermenu"
+        "cpu",
+        "memory",
+        "disk",
+        "temperature"
+        // "battery",
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "pulseaudio"
+    ],
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "custom/left-arrow": {
+      "format": "",
+    },
+
+    "custom/right-arrow": {
+      "format": "",
+    },
+
+    "cpu": {
+        "format": "{usage}%  ",
+        "tooltip": false,
+        "on-click": "kitty -e btop"
+    },
+
+    "memory": {
+        "format": "{percentage}%  ",
+        "on-click": "kitty -e btop"
+    },
+
+    "disk": {
+        "format": "{percentage_used}% 󰉉 ",
+        "on-click": "kitty -e gdu $HOME --config-file $HOME/.config/gdu/gdu.yaml"
+    },
+
+    "temperature": {
+        "thermal-zone": 2,
+        "critical-threshold": 70,
+        "format-critical": "{temperatureC}°C {icon} ",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "{format-icons} {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": " ",
+        "format-icons": {
+            "headphone": " ",
+            "headset": " ",
+            "default": ["", " ", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+}
+

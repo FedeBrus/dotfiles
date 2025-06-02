@@ -2,73 +2,42 @@
 {
     "layer": "bottom", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 38, // Waybar height (to be removed for auto height)
-    "spacing": 4, // Gaps between modules (4px)
+    "height": 28, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (4px)
     "reload_style_on_change": true,
     "modules-left": [
-        "cpu",
-        "memory",
-        "disk",
-        "temperature",
-        "clock",
-        "hyprland/language",
-        "mpd",
-        "network",
+        "custom/updates",
+        "custom/left1",
+        "custom/grayscale",
+        "custom/left2",
+        "mpd"
+        //"custom/left3"
         // "grayscale",
         // "powermenu",
         // "quote",
         //  "brownnoise"
-        "pulseaudio"
     ],
     "modules-center": [
-        "hyprland/workspaces"
+        "custom/right4",
+        "hyprland/workspaces",
+        "custom/left4",
     ],
     "modules-right": [
-        "tray",
-        "wlr/taskbar",
+        "custom/right1",
+        "hyprland/language",
+        "custom/right2",
+        "network",
+        "custom/right3",
+        "clock"
     ],
     "tray": {
         // "icon-size": 21,
         "spacing": 10
     },
 
-    "cpu": {
-        "format": "{usage}%  ",
-        "tooltip": false,
-        "on-click": "kitty -e btop"
-    },
-
-    "memory": {
-        "format": "{percentage}%  ",
-        "on-click": "kitty -e btop"
-    },
-
-    "disk": {
-        "format": "{percentage_used}% 󰉉 ",
-        "on-click": "kitty -e gdu $HOME --config-file $HOME/.config/gdu/gdu.yaml"
-    },
-
-    "temperature": {
-        "thermal-zone": 2,
-        "critical-threshold": 70,
-        "format-critical": "{temperatureC}°C {icon} ",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-
-    "wlr/taskbar": {
-          "format": "{icon} {title:.17}",
-          "icon-size": 28,
-          "spacing": 3,
-          "on-click-middle": "close",
-          "tooltip-format": "{title}",
-          "ignore-list": [],
-          "on-click": "activate"
-    },    
-
     "clock": {
     "format": "{:%H:%M}  ",
-    "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+    "format-alt": "{:%A, %B %d, %Y (%R)} 󰃭 ",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
                 "mode"          : "year",
@@ -90,26 +59,6 @@
                             "on-scroll-up": "shift_up",
                             "on-scroll-down": "shift_down"
                             }
-    },
-
-    "group/hardware": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 500,
-            "children-class": "not-power",
-            "transition-left-to-right": true,
-        },
-        "modules": [
-          "custom/hardware_logo",
-          "cpu",
-          "memory",
-          "disk",
-          "temperature"
-        ],
-    },
-
-    "custom/hardware_logo": {
-      "format": " ",
     },
 
     "hyprland/language": {
@@ -139,28 +88,6 @@
         }
     },
 
-    "privacy": {
-      "icon-spacing": 4,
-      "icon-size": 18,
-      "transition-duration": 250,
-      "modules": [
-        {
-          "type": "screenshare",
-          "tooltip": true,
-          "tooltip-icon-size": 10
-        },
-        {
-          "type": "audio-out",
-          "tooltip": true,
-          "tooltip-icon-size": 24
-        },
-        {
-          "type": "audio-in",
-          "tooltip": true,
-          "tooltip-icon-size": 24
-        }
-      ]
-    },
     
     "keyboard-state": {
         "numlock": true,
@@ -189,11 +116,11 @@
             "on": " "
         },
         "single-icons": {
-            "on": "1 "
+            "on": " 1"
         },
         "state-icons": {
-            "paused": "",
-            "playing": ""
+            "paused": " ",
+            "playing": " "
         },
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
@@ -201,7 +128,7 @@
 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{essid} ({signalStrength}%)  ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -209,37 +136,54 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
 
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+    "custom/updates": {
+        "format": "{} {icon}",
+        "return-type": "json",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "has-updates": " ",
+            "updated": ""
         },
-        "on-click": "pavucontrol"
+        "exec-if": "which waybar-module-pacman-updates",
+        "exec": "waybar-module-pacman-updates --no-zero-output"
     },
 
-    "custom/power": {
-        "format" : "⏻ ",
-        "tooltip": false,
-        "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-        "menu-actions": {
-          "shutdown": "shutdown",
-          "reboot": "reboot",
-          "suspend": "systemctl suspend",
-          "hibernate": "systemctl hibernate"
-        }
+    "custom/grayscale": {
+        "format": "{}",
+        "exec": "/home/haida/.config/waybar/scripts/grayscale-detect.sh",
+        "interval": 1,
+        "on-click": "hyprshade toggle grayscale"
+    },
+
+    "custom/left1": {
+      "format": "",
+    },
+
+    "custom/left2": {
+      "format": "",
+    },
+
+    "custom/left3": {
+      "format": "",
+    },
+
+    "custom/left4": {
+      "format": "",
+    },
+
+    "custom/right1": {
+      "format": "",
+    },
+
+    "custom/right2": {
+      "format": "",
+    },
+
+    "custom/right3": {
+      "format": "",
+    },
+
+    "custom/right4": {
+      "format": "",
     }
 }
 
