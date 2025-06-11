@@ -1,0 +1,8 @@
+2025-06-08 20:17:41.214 | INFO  | nchat 5.7.24  (main.cpp:251)
+2025-06-08 20:17:41.214 | INFO  | Arch Linux x86_64  (main.cpp:253)
+2025-06-08 20:17:41.214 | INFO  | GCC 15.1.1 20250425 glibc 2.41  (main.cpp:255)
+2025-06-08 20:17:41.214 | INFO  | Go 1.24.4  (main.cpp:257)
+2025-06-08 20:17:41.214 | INFO  | Telegram ON, WhatsApp ON  (main.cpp:259)
+2025-06-08 20:17:41.237 | INFO  | load telegram profile  (tgchat.cpp:339)
+2025-06-08 20:17:41.238 | INFO  | tdlib upgrade from 0  (tgchat.cpp:357)
+2025-06-08 20:17:41.244 | INFO  | ui loop start  (ui.cpp:96)

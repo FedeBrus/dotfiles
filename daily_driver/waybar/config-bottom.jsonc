@@ -8,27 +8,56 @@
     "modules-left": [
         // "powermenu"
         "cpu",
+        "custom/right6",
         "memory",
+        "custom/right7",
         "disk",
-        "temperature"
+        "custom/right8",
+        "temperature",
+        "custom/right9"
         // "battery",
     ],
+
     "modules-center": [
     ],
+
     "modules-right": [
+        "custom/left6",
+        "custom/left7",
+        "custom/left8",
         "pulseaudio"
     ],
+
     "tray": {
         // "icon-size": 21,
         "spacing": 10
     },
 
-    "custom/left-arrow": {
-      "format": "",
-    },
-
-    "custom/right-arrow": {
-      "format": "",
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}%  ",
+        "format-disconnected": "Disconnected  ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped  ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+            "on": "  "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"> </span> ",
+            "on": "  "
+        },
+        "repeat-icons": {
+            "on": "  "
+        },
+        "single-icons": {
+            "on": " 1 "
+        },
+        "state-icons": {
+            "paused": " ",
+            "playing": " "
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
     },
 
     "cpu": {
@@ -70,5 +99,50 @@
         },
         "on-click": "pavucontrol"
     },
+
+    "custom/right6": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/right7": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/right8": {
+      "format": "",
+      "tooltip": false
+    },
+    // 
+    "custom/right9": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/right10": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left6": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left7": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left8": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left9": {
+      "format": "",
+      "tooltip": false
+    }
 }
 

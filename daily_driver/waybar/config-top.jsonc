@@ -7,29 +7,30 @@
     "reload_style_on_change": true,
     "modules-left": [
         "custom/updates",
-        "custom/left1",
+        "custom/right1",
         "custom/grayscale",
-        "custom/left2",
-        "mpd"
-        //"custom/left3"
-        // "grayscale",
+        "custom/right2",
+        "custom/noise",
+        "custom/right3",
+        "hyprland/language",
+        "custom/right4"
         // "powermenu",
         // "quote",
-        //  "brownnoise"
+        // "brownnoise"
     ],
     "modules-center": [
-        "custom/right4",
+        "custom/left1",
         "hyprland/workspaces",
-        "custom/left4",
+        "custom/right5",
     ],
     "modules-right": [
-        "custom/right1",
-        "hyprland/language",
-        "custom/right2",
+        "custom/left2",
+        "custom/left3",
         "network",
-        "custom/right3",
+        "custom/left4",
         "clock"
     ],
+
     "tray": {
         // "icon-size": 21,
         "spacing": 10
@@ -99,41 +100,15 @@
         }
     },
 
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": " 1"
-        },
-        "state-icons": {
-            "paused": " ",
-            "playing": " "
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-wifi": "{essid} ({signalStrength}%)   {bandwidthDownBytes}   {bandwidthUpBytes}  ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-disconnected": "Disconnected ⚠ ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "interval": 1,
     },
 
     "custom/updates": {
@@ -141,7 +116,7 @@
         "return-type": "json",
         "format-icons": {
             "has-updates": " ",
-            "updated": ""
+            "updated": "None"
         },
         "exec-if": "which waybar-module-pacman-updates",
         "exec": "waybar-module-pacman-updates --no-zero-output"
@@ -150,40 +125,62 @@
     "custom/grayscale": {
         "format": "{}",
         "exec": "/home/haida/.config/waybar/scripts/grayscale-detect.sh",
-        "interval": 1,
-        "on-click": "hyprshade toggle grayscale"
+        "exec-on-event": true,
+        "on-click": "pkill -RTMIN+9 waybar && hyprshade toggle grayscale",
+        "signal": 9
     },
 
-    "custom/left1": {
-      "format": "",
-    },
-
-    "custom/left2": {
-      "format": "",
-    },
-
-    "custom/left3": {
-      "format": "",
-    },
-
-    "custom/left4": {
-      "format": "",
+    "custom/noise": {
+        "format": "{}",
+        "exec": "/home/haida/.config/waybar/scripts/brownnoise-toggle.sh status",
+        "exec-on-event": true,
+        "on-click": "/home/haida/.config/waybar/scripts/brownnoise-toggle.sh toggle",
+        "signal": 8
     },
 
     "custom/right1": {
-      "format": "",
+      "format": "",
+      "tooltip": false
     },
 
     "custom/right2": {
-      "format": "",
+      "format": "",
+      "tooltip": false
     },
 
     "custom/right3": {
-      "format": "",
+      "format": "",
+      "tooltip": false
+    },
+    // 
+    "custom/right4": {
+      "format": "",
+      "tooltip": false
     },
 
-    "custom/right4": {
-      "format": "",
+    "custom/right5": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left1": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left2": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left3": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left4": {
+      "format": "",
+      "tooltip": false
     }
 }
 

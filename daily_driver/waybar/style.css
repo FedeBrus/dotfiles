@@ -13,6 +13,7 @@
 /* Colors (gruvbox) */
 @define-color black	#282828;
 @define-color red	#cc241d;
+@define-color orange #d65d0e;
 @define-color green	#98971a;
 @define-color yellow	#d79921;
 @define-color blue	#458588;
@@ -62,7 +63,7 @@
 #waybar {
 	background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
 	color: @white;
-	font-family: NotoSans Armenian, Iosevka Nerd Font, sans-serif;
+	font-family: Iosevka Nerd Font;
 	font-size: 10pt;
 	font-weight: bold;
 }
@@ -85,6 +86,7 @@
 #custom-updates,
 #custom-grayscale,
 #mpd,
+#custom-noise,
 #mpris {
 	padding-left: 8pt;
 	padding-right: 8pt;
@@ -119,6 +121,10 @@
     background: @mode;
 }
 
+#workspaces {
+  padding: 0 6pt;
+  background-color: @unfocused;
+}
 /* Workspaces stuff */
 #workspaces button {
     /*font-weight: bold;*/
@@ -126,12 +132,14 @@
     padding-right: 4pt;
     color: @white;
     background: @unfocused;
+    font-family: NotoSans Armenian;
 }
 
 /* Inactive (on unfocused output) */
 #workspaces button.visible {
-	color: @white;
-	background: @inactive;
+	color: @braqua;
+	/*background: @inactive;*/
+  box-shadow: inset 0 2px @braqua;
 }
 
 /* Active (on focused output) */
@@ -152,39 +160,13 @@
 	color: @white;
 }
 
+#workspaces button:not(.active):not(.focused):not(.empty) {
+    box-shadow: inset 0 2px #ebdbb2;
+}
+
 #window {
 	margin-right: 35pt;
 	margin-left: 35pt;
-}
-
-#pulseaudio {
-	background: @sound;
-	color: @black;
-}
-
-#network {
-	background: @network;
-	color: @white;
-}
-
-#memory {
-	background: @memory;
-	color: @black;
-}
-
-#cpu {
-	background: @cpu;
-	color: @white;
-}
-
-#temperature {
-	background: @temp;
-	color: @black;
-}
-
-#language {
-	background: @layout;
-	color: @black;
 }
 
 #battery {
@@ -196,106 +178,162 @@
 	background: @date;
 }
 
-#clock.date {
-	background: @date;
-	color: @white;
-}
-
-#clock.time {
-	background: @time;
-	color: @black;
-}
-
 #custom-updates {
+  background: @purple;
+  color: @white;
+}
+
+#custom-right1{
+  font-family: JetBrainsMono Nerd Font;
+	font-size: 16pt;
+	color: @purple;
+	background: @blue;
+}
+
+#custom-grayscale {
+  background: @blue;
+  color: @white;
+}
+
+#custom-right2 {
+  font-family: JetBrainsMono Nerd Font;
+	font-size: 16pt;
+	color: @blue;
+	background: @aqua;
+}
+
+#custom-noise {
   background: @aqua;
   color: @white;
 }
 
-#custom-grayscale {
-  background: @gray;
-  color: @black;
-}
-
-#custom-right1{
-	font-size: 16pt;
-	color: @layout;
-	background: @date;
-}
-
-#custom-right2 {
-	font-size: 16pt;
-	color: @network;
-	background: @layout;
-}
-
 #custom-right3 {
+  font-family: JetBrainsMono Nerd Font;
 	font-size: 16pt;
-	color: @date;
-	background: @network;
+	color: @aqua;
+	background: @green;
+}
+
+#language {
+	background: @green;
+	color: @white;
 }
 
 #custom-right4 {
+  font-family: JetBrainsMono Nerd Font;
 	font-size: 16pt;
-	color: @unfocused;
-	background: @date;
+	color: @green;
+	background: @black;
 }
 
-#custom-left1{
-	font-size: 16pt;
+#custom-left1, #custom-right5 {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16pt;
+	color: @unfocused;
+	background: @black;
+}
+
+#cpu {
+	background: @purple;
+	color: @white;
+}
+
+#custom-right6 {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16pt;
+	color: @purple;
+	background: @blue;
+}
+
+#memory {
+	background: @blue;
+	color: @white;
+}
+
+#custom-right7 {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16pt;
+	color: @blue;
+	background: @aqua;
+}
+
+#disk {
+	background: @aqua;
+	color: @white;
+}
+
+#custom-right8 {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16pt;
 	color: @aqua;
-	background: @gray;
+	background: @green;
+}
+
+#temperature {
+	background: @green;
+	color: @white;
+}
+
+#custom-right9 {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16pt;
+	color: @green;
+	background: @black;
 }
 
 #custom-left2 {
-	font-size: 16pt;
-	color: @gray;
-	background: @mpd;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16pt;
+	color: @yellow;
+	background: @black;
 }
 
 #custom-left3 {
-	font-size: 16pt;
-	color: @date;
-	background: @network;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16pt;
+	color: @orange;
+	background: @yellow;
+}
+
+#network {
+	background: @orange;
+	color: @white;
 }
 
 #custom-left4 {
-	font-size: 16pt;
-	color: @unfocused;
-	background: @date;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16pt;
+	color: @red;
+	background: @orange;
 }
 
-#custom-arrow5 {
-	font-size: 11pt;
-	color: @temp;
-	background: @cpu;
+#clock {
+	background: @red;
+	color: @white;
 }
 
-#custom-arrow6 {
-	font-size: 11pt;
-	color: @cpu;
-	background: @memory;
+#pulseaudio {
+	background: @red;
+	color: @white;
 }
 
-#custom-arrow7 {
-	font-size: 11pt;
-	color: @memory;
-	background: @network;
+#custom-left8 {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16pt;
+	color: @red;
+	background: @orange;
 }
 
-#custom-arrow8 {
-	font-size: 11pt;
-	color: @network;
-	background: @sound;
+#custom-left7 {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16pt;
+	color: @orange;
+	background: @yellow;
 }
 
-#custom-arrow9 {
-	font-size: 11pt;
-	color: @sound;
-	background: transparent;
-}
-
-#custom-arrow10 {
-	font-size: 11pt;
-	color: @unfocused;
-	background: transparent;
+#custom-left6 {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16pt;
+	color: @yellow;
+	background: @black;
 }
