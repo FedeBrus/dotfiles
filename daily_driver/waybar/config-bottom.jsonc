@@ -2,7 +2,7 @@
 {
     "layer": "bottom", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 28, // Waybar height (to be removed for auto height)
+    "height": 14, // Waybar height (to be removed for auto height)
     "spacing": 0, // Gaps between modules (4px)
     "reload_style_on_change": true,
     "modules-left": [
@@ -23,7 +23,9 @@
 
     "modules-right": [
         "custom/left6",
+        "backlight",
         "custom/left7",
+        "battery",
         "custom/left8",
         "pulseaudio"
     ],
@@ -60,6 +62,11 @@
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
 
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰃚 ", "󰃛 ", "󰃜 ", "󰃝 ", "󰃞 ", "󰃟 ", "󰃠 "]
+    },
+
     "cpu": {
         "format": "{usage}%  ",
         "tooltip": false,
@@ -77,7 +84,7 @@
     },
 
     "temperature": {
-        "thermal-zone": 2,
+        "thermal-zone": 0,
         "critical-threshold": 70,
         "format-critical": "{temperatureC}°C {icon} ",
         "format": "{temperatureC}°C {icon}",
@@ -99,6 +106,13 @@
         },
         "on-click": "pavucontrol"
     },
+
+    "battery": {
+        "format-discharging": "{capacity}% {icon}",
+        "format-icons": ["󰂃", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "format-charging": "{capacity}% 󰂄",
+        "format-full":  "Full 󰁹"
+    }, 
 
     "custom/right6": {
       "format": "",

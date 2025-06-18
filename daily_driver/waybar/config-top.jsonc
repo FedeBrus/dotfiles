@@ -16,7 +16,6 @@
         "custom/right4"
         // "powermenu",
         // "quote",
-        // "brownnoise"
     ],
     "modules-center": [
         "custom/left1",
@@ -85,7 +84,7 @@
         },
 
         "persistent-workspaces": {
-            "HDMI-A-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            "eDP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         }
     },
 
@@ -123,7 +122,7 @@
     },
 
     "custom/grayscale": {
-        "format": "{}",
+        "format": " {} ",
         "exec": "/home/haida/.config/waybar/scripts/grayscale-detect.sh",
         "exec-on-event": true,
         "on-click": "pkill -RTMIN+9 waybar && hyprshade toggle grayscale",
@@ -131,7 +130,7 @@
     },
 
     "custom/noise": {
-        "format": "{}",
+        "format": " {} ",
         "exec": "/home/haida/.config/waybar/scripts/brownnoise-toggle.sh status",
         "exec-on-event": true,
         "on-click": "/home/haida/.config/waybar/scripts/brownnoise-toggle.sh toggle",

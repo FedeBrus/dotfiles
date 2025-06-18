@@ -63,7 +63,7 @@
 #waybar {
 	background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
 	color: @white;
-	font-family: Iosevka Nerd Font;
+	font-family: JetBrainsMono Nerd Font;
 	font-size: 10pt;
 	font-weight: bold;
 }
@@ -88,8 +88,8 @@
 #mpd,
 #custom-noise,
 #mpris {
-	padding-left: 8pt;
-	padding-right: 8pt;
+	padding-left: 6pt;
+	padding-right: 6pt;
 }
 
 /* Each critical module */
@@ -170,7 +170,7 @@
 }
 
 #battery {
-	background: @battery;
+	background: @orange;
 	color: @white;
 }
 
@@ -322,6 +322,11 @@
   font-size: 16pt;
 	color: @red;
 	background: @orange;
+}
+
+#backlight {
+  background: @yellow;
+  color: white;
 }
 
 #custom-left7 {
