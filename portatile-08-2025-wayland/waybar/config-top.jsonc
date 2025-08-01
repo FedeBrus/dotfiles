@@ -1,0 +1,200 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "bottom", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "spacing": 0, // Gaps between modules (4px)
+    "reload_style_on_change": true,
+    "modules-left": [
+        "custom/updates",
+        "custom/right1",
+        "custom/grayscale",
+        "custom/right2",
+        "custom/noise",
+        "custom/right3",
+        "custom/language",
+        "custom/right4"
+        // "powermenu",
+        // "quote",
+    ],
+    "modules-center": [
+        "custom/left1",
+        "hyprland/workspaces",
+        "custom/right5"
+    ],
+
+    "modules-right": [
+        "custom/left2",
+	"custom/weather",
+        "custom/left3",
+        "network",
+        "custom/left4",
+        "clock"
+    ],
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "clock": {
+    "format": "{:%H:%M}  ",
+    "format-alt": "{:%A, %B %d, %Y (%R)} 󰃭 ",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+                "mode"          : "year",
+                "mode-mon-col"  : 3,
+                "weeks-pos"     : "right",
+                "on-scroll"     : 1,
+                "format": {
+                          "months":     "<span color='#ebdbb2'><b>{}</b></span>",
+                          "days":       "<span color='#ebdbb2'><b>{}</b></span>",
+                          "weeks":      "<span color='#ebdbb2'><b>W{}</b></span>",
+                          "weekdays":   "<span color='#ebdbb2'><b>{}</b></span>",
+                          "today":      "<span color='#ebdbb2'><b><u>{}</u></b></span>"
+                          }
+                },
+                "actions":  {
+                            "on-click-right": "mode",
+                            "on-scroll-up": "tz_up",
+                            "on-scroll-down": "tz_down",
+                            "on-scroll-up": "shift_up",
+                            "on-scroll-down": "shift_down"
+                            }
+    },
+
+    "custom/language": {
+        "format": "  {}",
+	"exec": "sh /home/haida/.config/waybar/scripts/fetch_layout.sh",
+	"tooltip": false,
+	"interval": 1
+	// "format-it": "it",
+	// "format-en": "brus",
+	// "keyboard-name": "at-translated-set-2-keyboard"
+    },
+
+    // Modules configuration
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "Հ",
+            "2": "Ծ",
+            "3": "Ֆ",
+            "4": "Ց",
+            "5": "Շ",
+            "6": "Յ",
+            "7": "Չ",
+            "8": "Ձ",
+            "9": "Ճ",
+            "10": "Ը"
+        },
+
+        "persistent-workspaces": {
+            "eDP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "HDMI-A-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        }
+    },
+
+    "custom/weather": {
+	    "format": "{}°",
+	    "tooltip": true,
+	    "interval": 3600,
+	    "exec": "wttrbar --nerd --location Thiene --hide-conditions",
+	    "return-type": "json"
+    },
+
+    
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{layout} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠ ",
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+	"format-alt": "{bandwidthDownBytes}   {bandwidthUpBytes}  ",
+        "interval": 1
+    },
+
+    "custom/updates": {
+        "format": " {}{icon}",
+        "return-type": "json",
+        "format-icons": {
+            "has-updates": "  ",
+            "updated": "None"
+        },
+        "exec-if": "which waybar-module-pacman-updates",
+        "exec": "waybar-module-pacman-updates --no-zero-output"
+    },
+
+    "custom/grayscale": {
+        "format": " {} ",
+        "exec": "/home/haida/.config/waybar/scripts/grayscale-detect.sh",
+        "exec-on-event": true,
+        "on-click": "pkill -RTMIN+9 waybar && hyprshade toggle grayscale",
+        "signal": 9
+    },
+
+    "custom/noise": {
+        "format": " {} ",
+        "exec": "/home/haida/.config/waybar/scripts/brownnoise-toggle.sh status",
+        "exec-on-event": true,
+        "on-click": "/home/haida/.config/waybar/scripts/brownnoise-toggle.sh toggle",
+        "signal": 8
+    },
+
+    "custom/right1": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/right2": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/right3": {
+      "format": "",
+      "tooltip": false
+    },
+    // 
+    "custom/right4": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/right5": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left1": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left2": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left3": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left4": {
+      "format": "",
+      "tooltip": false
+    }
+}
+

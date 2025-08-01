@@ -1,0 +1,166 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "bottom", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "spacing": 0, // Gaps between modules (4px)
+    "reload_style_on_change": true,
+    "modules-left": [
+        "custom/powermenu",
+	"custom/right6",
+        "cpu",
+        "custom/right7",
+        "memory",
+        "custom/right8",
+        "disk",
+        "custom/right9",
+        "temperature",
+        "custom/right10"
+    ],
+
+    "modules-center": [
+    ],
+
+    "modules-right": [
+        "custom/left6",
+        "backlight",
+        "custom/left7",
+        "battery",
+        "custom/left8",
+        "pulseaudio"
+    ],
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}%  ",
+        "format-disconnected": "Disconnected  ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped  ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+            "on": "  "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"> </span> ",
+            "on": "  "
+        },
+        "repeat-icons": {
+            "on": "  "
+        },
+        "single-icons": {
+            "on": " 1 "
+        },
+        "state-icons": {
+            "paused": " ",
+            "playing": " "
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰃚 ", "󰃛 ", "󰃜 ", "󰃝 ", "󰃞 ", "󰃟 ", "󰃠 "]
+    },
+
+    "cpu": {
+        "format": "{usage}%  ",
+        "tooltip": false,
+        "on-click": "kitty -e btop"
+    },
+
+    "memory": {
+        "format": "{percentage}%  ",
+        "on-click": "kitty -e btop"
+    },
+
+    "disk": {
+        "format": "{percentage_used}% 󰉉 ",
+        "on-click": "kitty -e gdu $HOME --config-file $HOME/.config/gdu/gdu.yaml"
+    },
+
+    "temperature": {
+        "thermal-zone": 0,
+        "critical-threshold": 70,
+        "format-critical": "{temperatureC}°C {icon} ",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "{format-icons} {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": " ",
+        "format-icons": {
+            "headphone": " ",
+            "headset": " ",
+            "default": ["", " ", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "battery": {
+        "format-discharging": "{capacity}% {icon}",
+        "format-icons": ["󰂃", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "format-charging": "{capacity}% 󰂄",
+        "format-full":  "Full 󰁹"
+    }, 
+
+    "custom/powermenu": {
+	"format": "  ",
+	"on-click": "sh /home/haida/.config/rofi/powermenu/powermenu.sh"
+    },
+
+    "custom/right6": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/right7": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/right8": {
+      "format": "",
+      "tooltip": false
+    },
+    // 
+    "custom/right9": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/right10": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left6": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left7": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left8": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "custom/left9": {
+      "format": "",
+      "tooltip": false
+    }
+}
+
