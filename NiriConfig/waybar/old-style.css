@@ -1,0 +1,296 @@
+/* Colors */
+@import 'colors-waybar.css';
+
+/* Keyframes */
+@keyframes blink-critical {
+	to {
+		/*color: @white;*/
+		background-color: @color3;
+	}
+}
+
+
+/* Reset all styles */
+* {
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	box-shadow: none;
+	text-shadow: none;
+	icon-shadow: none;
+}
+
+/* The whole bar */
+#waybar {
+	background: @background; /* #282828e0 */
+	color: @background;
+	font-family: JetBrainsMono Nerd Font;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+/* Each module */
+#battery,
+#clock,
+#cpu,
+#custom-language,
+#niri-language,
+#language,
+#memory,
+#mode,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#backlight,
+#idle_inhibitor,
+#disk,
+#user,
+#custom-updates,
+#custom-grayscale,
+#custom-weather,
+#mpd,
+#custom-powermenu,
+#custom-noise,
+#mpris {
+	padding: 0 6pt;
+}
+
+/* Each critical module */
+#mode,
+#memory.critical,
+#cpu.critical,
+#temperature.critical,
+#battery.critical.discharging {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-name: blink-critical;
+    animation-duration: 1s;
+}
+
+/* Each warning */
+#network.disconnected,
+#memory.warning,
+#cpu.warning,
+#temperature.warning,
+#battery.warning.discharging {
+	color: @color3;
+}
+
+/* And now modules themselves in their respective order */
+/* Current sway mode (resize etc) */
+#mode {
+    color: @foreground;
+    background: @mode;
+}
+
+#workspaces {
+  background-color: @background;
+}
+/* Workspaces stuff */
+#workspaces button {
+    /*font-weight: bold;*/
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    color: @foreground;
+    background: @background;
+    font-weight: bold;
+}
+
+/* Inactive (on unfocused output) */
+#workspaces button.visible {
+	color: @color2;
+  box-shadow: inset 0 2px @color2;
+}
+
+/* Active (on focused output) */
+#workspaces button.focused {
+	color: @color10;
+	background: @background;
+  box-shadow: inset 0 2px #b8bb26;
+}
+
+/* Contains an urgent window */
+#workspaces button.urgent {
+	color: @background;
+	background: @color3;
+}
+
+/* Style when cursor is on the button */
+#workspaces button:hover {
+	background: @foreground;
+	color: @background;
+}
+
+#workspaces button:not(.active):not(.focused):not(.empty) {
+    box-shadow: inset 0 2px @foreground;
+}
+
+#window {
+	margin-right: 35pt;
+	margin-left: 35pt;
+}
+
+#battery {
+	background: @color8;
+}
+
+#custom-updates {
+  background: @color5;
+}
+
+#custom-right1,
+#custom-right2,
+#custom-right3,
+#custom-right4,
+#custom-right5,
+#custom-right6,
+#custom-right7,
+#custom-right8,
+#custom-right9,
+#custom-right10,
+#custom-left1,
+#custom-left2,
+#custom-left3,
+#custom-left4,
+#custom-left5,
+#custom-left6,
+#custom-left7,
+#custom-left8 {
+  font-size: 16.8pt;
+}
+
+#custom-right1{
+	color: @color5;
+	background: @color4;
+}
+
+#custom-grayscale {
+  background: @color4;
+}
+
+#custom-right2 {
+	color: @color4;
+	background: @color6;
+}
+
+#custom-noise {
+  background: @color6;
+}
+
+#custom-right3 {
+	color: @color6;
+	background: @color2;
+}
+
+#language, #niri-language, #custom-language {
+	background: @color2;
+}
+
+#custom-right4 {
+	color: @color2;
+	background: transparent;
+}
+
+#custom-left1, #custom-right5 {
+color: @background;
+background: transparent;
+}
+
+#custom-powermenu {
+	background: #928374;
+}
+
+#custom-right6 {
+	color: #928374;
+	background: @color5;
+}
+
+#cpu {
+	background: @color5;
+}
+
+#custom-right7 {
+	color: @color5;
+	background: @color4;
+}
+
+#memory {
+	background: @color4;
+}
+
+#custom-right8 {
+	color: @color4;
+	background: @color6;
+}
+
+#disk {
+	background: @color6;
+}
+
+#custom-right9 {
+	color: @color6;
+	background: @color2;
+}
+
+#temperature {
+	background: @color2;
+}
+
+#custom-right10 {
+	color: @color2;
+	background: transparent;
+}
+
+#custom-left2 {
+	color: @color3;
+	background: transparent;
+}
+
+#custom-weather {
+	background: @color3;
+}
+
+#custom-left3 {
+	color: @color8;
+	background: @color3;
+}
+
+#network {
+	background: @color8;
+}
+
+#custom-left4 {
+	color: @color1;
+	background: @color8;
+}
+
+#clock {
+	background: @color1;
+}
+
+#pulseaudio {
+	background: @color1;
+}
+
+#custom-left8 {
+	color: @color1;
+	background: @color8;
+}
+
+#backlight {
+  background: @color3;
+}
+
+#custom-left7 {
+	color: @color8;
+	background: @color3;
+}
+
+#custom-left6 {
+	color: @color3;
+	background: transparent;
+}

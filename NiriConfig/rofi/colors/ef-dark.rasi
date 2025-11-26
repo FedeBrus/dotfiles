@@ -1,0 +1,10 @@
+/* Ef-Dark */
+* {
+    background:     #000000; /* bg_main */
+    background-alt: #282828; /* bg_dim */
+    foreground:     #ebdbb2; /* fg_main */
+    selected:       #ebdbb2; /* bg_mode_line */
+    selected-fg:    #282828; /* fg_mode_line */
+    active:         #0faa26; /* g_green */
+    urgent:         #ef6560; /* red */
+}

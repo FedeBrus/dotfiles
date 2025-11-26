@@ -1,0 +1,260 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "bottom", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "spacing": 16, // Gaps between modules (4px)
+    "reload_style_on_change": true,
+    "modules-left": [
+        "custom/powermenu",
+        "custom/updates",
+	      "custom/weather",
+        "custom/language"
+        // "mpd",
+        // "custom/separator",
+        // "custom/separator",
+        // "quote",
+    ],
+    "modules-center": [
+        "niri/workspaces",
+    ],
+
+    "modules-right": [
+        "temperature",
+        "cpu",
+        "memory",
+        "disk",
+        "network",
+        // "battery",
+        // "backlight",
+        "pulseaudio",
+        "clock"
+    ],
+
+    "clock": {
+    "format": "{:%H:%M}  ",
+    "format-alt": "{:%A, %B %d, %Y (%R)} 󰃭 ",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+                "mode"          : "year",
+                "mode-mon-col"  : 3,
+                "weeks-pos"     : "right",
+                "on-scroll"     : 1,
+                "format": {
+                          "months":     "<span color='#ebdbb2'><b>{}</b></span>",
+                          "days":       "<span color='#ebdbb2'><b>{}</b></span>",
+                          "weeks":      "<span color='#ebdbb2'><b>W{}</b></span>",
+                          "weekdays":   "<span color='#ebdbb2'><b>{}</b></span>",
+                          "today":      "<span color='#ebdbb2'><b><u>{}</u></b></span>"
+                          }
+                },
+                "actions":  {
+                            "on-click-right": "mode",
+                            "on-scroll-up": "tz_up",
+                            "on-scroll-down": "tz_down",
+                            "on-scroll-up": "shift_up",
+                            "on-scroll-down": "shift_down"
+                            }
+    },
+
+    "custom/language": {
+        "format": "  {}",
+        "exec": "sh /home/haida/.config/waybar/scripts/fetch_layout.sh",
+        "tooltip": false,
+        "interval": 1
+    },
+
+    "niri/language": {
+        "format": "{long}"
+    },
+
+    // Modules configuration
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "Հ",
+            "2": "Ծ",
+            "3": "Ֆ",
+            "4": "Ց",
+            "5": "Շ",
+            "6": "Յ",
+            "7": "Չ",
+            "8": "Ձ",
+            "9": "Ճ",
+            "10": "Ը"
+        },
+
+        "persistent-workspaces": {
+            "eDP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "HDMI-A-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "DP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        }
+    },
+    
+    "niri/workspaces": {
+        "all-outputs": false,
+        "format": "{icon}",
+        "format-icons": {
+            "message": "Հ",
+            "browser": "Ծ",
+            "code": "Ֆ",
+            "study": "Ց",
+            "gaming": "Շ",
+            "6": "Յ",
+            "7": "Չ",
+            "8": "Ձ",
+            "9": "Ճ",
+            "10": "Ը"
+        },
+    },
+
+    "custom/weather": {
+	    "format": "{}°",
+	    "tooltip": true,
+	    "interval": 3600,
+	    "exec": "wttrbar --nerd --location Trento --hide-conditions",
+	    "return-type": "json"
+    },
+    
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{layout} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid}  ",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠ ",
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+	      "format-alt": "{bandwidthDownBytes}   {bandwidthUpBytes}  ",
+        "interval": 1
+    },
+
+    "custom/updates": {
+        "format": " {}{icon}",
+        "return-type": "json",
+        "format-icons": {
+            "has-updates": "  ",
+            "updated": "None"
+        },
+        "exec-if": "which waybar-module-pacman-updates",
+        "exec": "waybar-module-pacman-updates --no-zero-output"
+    },
+
+    "custom/grayscale": {
+        "format": " {} ",
+        "exec": "/home/haida/.config/waybar/scripts/grayscale-detect.sh",
+        "exec-on-event": true,
+        "on-click": "pkill -RTMIN+9 waybar && hyprshade toggle grayscale",
+        "signal": 9
+    },
+
+    "custom/noise": {
+        "format": " {}",
+        "exec": "/home/haida/.config/waybar/scripts/brownnoise-toggle.sh status",
+        "exec-on-event": true,
+        "on-click": "/home/haida/.config/waybar/scripts/brownnoise-toggle.sh toggle",
+        "signal": 8
+    },
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}%  ",
+        "format-disconnected": "Disconnected  ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped  ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+            "on": "  "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"> </span> ",
+            "on": "  "
+        },
+        "repeat-icons": {
+            "on": "  "
+        },
+        "single-icons": {
+            "on": " 1 "
+        },
+        "state-icons": {
+            "paused": " ",
+            "playing": " "
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰃚 ", "󰃛 ", "󰃜 ", "󰃝 ", "󰃞 ", "󰃟 ", "󰃠 "]
+    },
+
+    "cpu": {
+        "format": "{usage}%  ",
+        "tooltip": false,
+        "on-click": "kitty -e btop"
+    },
+
+    "memory": {
+        "format": "{percentage}%  ",
+        "on-click": "kitty -e btop"
+    },
+
+    "disk": {
+        "format": "{percentage_used}% 󰉉 ",
+        "on-click": "kitty -e gdu $HOME --config-file $HOME/.config/gdu/gdu.yaml"
+    },
+
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+        "critical-threshold": 70,
+        "format-critical": "{temperatureC}°C {icon} ",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "{format-icons} {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": " ",
+        "format-icons": {
+            "headphone": " ",
+            "headset": " ",
+            "default": ["", " ", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "battery": {
+        "format-discharging": "{capacity}% {icon}",
+        "format-icons": ["󰂃", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "format-charging": "{capacity}% 󰂄",
+        "format-full":  "Full 󰁹"
+    }, 
+
+    "custom/powermenu": {
+        "format": "  ",
+	      "on-click": "sh /home/haida/.config/rofi/powermenu/powermenu.sh"
+    },
+
+    "custom/separator": {
+        "format": "|"
+    }
+}
+
